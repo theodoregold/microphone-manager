@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63703D072597F2D900CA7E61 /* ConnectedInputDevicesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63703D062597F2D900CA7E61 /* ConnectedInputDevicesState.swift */; };
+		63703D0C2597F3C100CA7E61 /* ConnectedInputDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63703D0B2597F3C100CA7E61 /* ConnectedInputDevices.swift */; };
+		638A1EE725991B00003ED32A /* InputDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A1EE625991B00003ED32A /* InputDeviceView.swift */; };
+		638A1EEF25994F16003ED32A /* GlobalInputDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A1EEE25994F16003ED32A /* GlobalInputDeviceView.swift */; };
+		638A1EF5259951AA003ED32A /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 638A1EF4259951AA003ED32A /* HotKey */; };
+		638A1F0B2599EACA003ED32A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A1F0A2599EACA003ED32A /* SettingsView.swift */; };
+		638A1F15259A8EB3003ED32A /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 638A1F14259A8EB3003ED32A /* LaunchAtLogin */; };
+		639DD1842594F0350047A95C /* Microphone_ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639DD1832594F0350047A95C /* Microphone_ManagerApp.swift */; };
+		639DD1862594F0350047A95C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639DD1852594F0350047A95C /* ContentView.swift */; };
+		639DD1882594F0350047A95C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639DD1872594F0350047A95C /* Assets.xcassets */; };
+		639DD18B2594F0350047A95C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639DD18A2594F0350047A95C /* Preview Assets.xcassets */; };
+		639DD1B72594F0900047A95C /* InputDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639DD1B62594F0900047A95C /* InputDevice.swift */; };
+		639DD1BC2594F0A60047A95C /* HardwareError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639DD1BB2594F0A60047A95C /* HardwareError.swift */; };
+		639DD1C12594F2520047A95C /* Muteable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639DD1C02594F2520047A95C /* Muteable.swift */; };
+		639DD1C92594F3160047A95C /* VolumeChangeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639DD1C82594F3160047A95C /* VolumeChangeable.swift */; };
+		639DD1D22594F43C0047A95C /* InputDeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639DD1D12594F43C0047A95C /* InputDeviceState.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		63703D062597F2D900CA7E61 /* ConnectedInputDevicesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedInputDevicesState.swift; sourceTree = "<group>"; };
+		63703D0B2597F3C100CA7E61 /* ConnectedInputDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedInputDevices.swift; sourceTree = "<group>"; };
+		638A1EE625991B00003ED32A /* InputDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDeviceView.swift; sourceTree = "<group>"; };
+		638A1EEE25994F16003ED32A /* GlobalInputDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalInputDeviceView.swift; sourceTree = "<group>"; };
+		638A1F0A2599EACA003ED32A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		639DD1802594F0350047A95C /* Microphone Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Microphone Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		639DD1832594F0350047A95C /* Microphone_ManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Microphone_ManagerApp.swift; sourceTree = "<group>"; };
+		639DD1852594F0350047A95C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		639DD1872594F0350047A95C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		639DD18A2594F0350047A95C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		639DD18C2594F0350047A95C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639DD18D2594F0350047A95C /* Microphone_Manager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Microphone_Manager.entitlements; sourceTree = "<group>"; };
+		639DD1B62594F0900047A95C /* InputDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDevice.swift; sourceTree = "<group>"; };
+		639DD1BB2594F0A60047A95C /* HardwareError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardwareError.swift; sourceTree = "<group>"; };
+		639DD1C02594F2520047A95C /* Muteable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muteable.swift; sourceTree = "<group>"; };
+		639DD1C82594F3160047A95C /* VolumeChangeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeChangeable.swift; sourceTree = "<group>"; };
+		639DD1D12594F43C0047A95C /* InputDeviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDeviceState.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		639DD17D2594F0350047A95C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				638A1F15259A8EB3003ED32A /* LaunchAtLogin in Frameworks */,
+				638A1EF5259951AA003ED32A /* HotKey in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		639DD1772594F0350047A95C = {
+			isa = PBXGroup;
+			children = (
+				639DD1822594F0350047A95C /* Microphone Manager */,
+				639DD1812594F0350047A95C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		639DD1812594F0350047A95C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				639DD1802594F0350047A95C /* Microphone Manager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		639DD1822594F0350047A95C /* Microphone Manager */ = {
+			isa = PBXGroup;
+			children = (
+				639DD1D02594F40E0047A95C /* States */,
+				639DD1B52594F0770047A95C /* Hardware */,
+				639DD1B42594F0690047A95C /* Views */,
+				639DD1832594F0350047A95C /* Microphone_ManagerApp.swift */,
+				639DD1872594F0350047A95C /* Assets.xcassets */,
+				639DD18C2594F0350047A95C /* Info.plist */,
+				639DD18D2594F0350047A95C /* Microphone_Manager.entitlements */,
+				639DD1892594F0350047A95C /* Preview Content */,
+			);
+			path = "Microphone Manager";
+			sourceTree = "<group>";
+		};
+		639DD1892594F0350047A95C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				639DD18A2594F0350047A95C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		639DD1B42594F0690047A95C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				639DD1852594F0350047A95C /* ContentView.swift */,
+				638A1EE625991B00003ED32A /* InputDeviceView.swift */,
+				638A1EEE25994F16003ED32A /* GlobalInputDeviceView.swift */,
+				638A1F0A2599EACA003ED32A /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		639DD1B52594F0770047A95C /* Hardware */ = {
+			isa = PBXGroup;
+			children = (
+				639DD1B62594F0900047A95C /* InputDevice.swift */,
+				639DD1BB2594F0A60047A95C /* HardwareError.swift */,
+				639DD1C02594F2520047A95C /* Muteable.swift */,
+				639DD1C82594F3160047A95C /* VolumeChangeable.swift */,
+				63703D0B2597F3C100CA7E61 /* ConnectedInputDevices.swift */,
+			);
+			path = Hardware;
+			sourceTree = "<group>";
+		};
+		639DD1D02594F40E0047A95C /* States */ = {
+			isa = PBXGroup;
+			children = (
+				639DD1D12594F43C0047A95C /* InputDeviceState.swift */,
+				63703D062597F2D900CA7E61 /* ConnectedInputDevicesState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		639DD17F2594F0350047A95C /* Microphone Manager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 639DD1A62594F0350047A95C /* Build configuration list for PBXNativeTarget "Microphone Manager" */;
+			buildPhases = (
+				639DD17C2594F0350047A95C /* Sources */,
+				639DD17D2594F0350047A95C /* Frameworks */,
+				639DD17E2594F0350047A95C /* Resources */,
+				638A1F17259A8FF4003ED32A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Microphone Manager";
+			packageProductDependencies = (
+				638A1EF4259951AA003ED32A /* HotKey */,
+				638A1F14259A8EB3003ED32A /* LaunchAtLogin */,
+			);
+			productName = "Microphone Manager";
+			productReference = 639DD1802594F0350047A95C /* Microphone Manager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		639DD1782594F0350047A95C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					639DD17F2594F0350047A95C = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 639DD17B2594F0350047A95C /* Build configuration list for PBXProject "Microphone Manager" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 639DD1772594F0350047A95C;
+			packageReferences = (
+				638A1EF3259951AA003ED32A /* XCRemoteSwiftPackageReference "HotKey" */,
+				638A1F13259A8EB3003ED32A /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+			);
+			productRefGroup = 639DD1812594F0350047A95C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				639DD17F2594F0350047A95C /* Microphone Manager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		639DD17E2594F0350047A95C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639DD18B2594F0350047A95C /* Preview Assets.xcassets in Resources */,
+				639DD1882594F0350047A95C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		638A1F17259A8FF4003ED32A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		639DD17C2594F0350047A95C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639DD1B72594F0900047A95C /* InputDevice.swift in Sources */,
+				639DD1862594F0350047A95C /* ContentView.swift in Sources */,
+				639DD1BC2594F0A60047A95C /* HardwareError.swift in Sources */,
+				638A1EEF25994F16003ED32A /* GlobalInputDeviceView.swift in Sources */,
+				638A1EE725991B00003ED32A /* InputDeviceView.swift in Sources */,
+				639DD1842594F0350047A95C /* Microphone_ManagerApp.swift in Sources */,
+				63703D072597F2D900CA7E61 /* ConnectedInputDevicesState.swift in Sources */,
+				639DD1D22594F43C0047A95C /* InputDeviceState.swift in Sources */,
+				639DD1C12594F2520047A95C /* Muteable.swift in Sources */,
+				638A1F0B2599EACA003ED32A /* SettingsView.swift in Sources */,
+				639DD1C92594F3160047A95C /* VolumeChangeable.swift in Sources */,
+				63703D0C2597F3C100CA7E61 /* ConnectedInputDevices.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		639DD1A42594F0350047A95C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		639DD1A52594F0350047A95C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		639DD1A72594F0350047A95C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Microphone Manager/Microphone_Manager.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Microphone Manager/Preview Content\"";
+				DEVELOPMENT_TEAM = 28Q87UYUAL;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Microphone Manager/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = es.dmoran.MicrophoneManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		639DD1A82594F0350047A95C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Microphone Manager/Microphone_Manager.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Microphone Manager/Preview Content\"";
+				DEVELOPMENT_TEAM = 28Q87UYUAL;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Microphone Manager/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = es.dmoran.MicrophoneManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		639DD17B2594F0350047A95C /* Build configuration list for PBXProject "Microphone Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639DD1A42594F0350047A95C /* Debug */,
+				639DD1A52594F0350047A95C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		639DD1A62594F0350047A95C /* Build configuration list for PBXNativeTarget "Microphone Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639DD1A72594F0350047A95C /* Debug */,
+				639DD1A82594F0350047A95C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		638A1EF3259951AA003ED32A /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
+		638A1F13259A8EB3003ED32A /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		638A1EF4259951AA003ED32A /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 638A1EF3259951AA003ED32A /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+		638A1F14259A8EB3003ED32A /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 638A1F13259A8EB3003ED32A /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 639DD1782594F0350047A95C /* Project object */;
+}
