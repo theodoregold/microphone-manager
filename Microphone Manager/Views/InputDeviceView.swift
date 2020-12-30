@@ -17,16 +17,21 @@ struct InputDeviceView: View {
             Image(systemName: inputDeviceState.isDefault ? "circle.fill" : "circle")
                 .font(.largeTitle)
                 .padding(.leading).padding(.trailing)
-            Text(inputDeviceState.name)
-                .padding(.leading).padding(.trailing)
-            Spacer()
-            Image(systemName: inputDeviceState.muted ? "mic.slash.fill" : "mic.fill")
-                .font(.largeTitle)
-                .padding(.leading).padding(.trailing)
-        }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            inputDeviceState.muted = !inputDeviceState.muted
+                .onTapGesture {
+                    inputDeviceState.isDefault = true
+                }
+            Group {
+                Text(inputDeviceState.name)
+                    .padding(.leading).padding(.trailing)
+                Spacer()
+                Image(systemName: inputDeviceState.muted ? "mic.slash.fill" : "mic.fill")
+                    .font(.largeTitle)
+                    .padding(.leading).padding(.trailing)
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                inputDeviceState.muted = !inputDeviceState.muted
+            }
         }
     }
 }

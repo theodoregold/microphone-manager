@@ -42,9 +42,10 @@ class ConnectedInputDevicesState : ObservableObject {
         var inputDeviceStates = Set<InputDeviceState>()
         for inputDevice in inputDevices {
             if let idState = try? InputDeviceState(inputDevice: inputDevice, onChange:  {_ in
+                self.checkForDefaultDevice()
                 // Update all views depending on this observable object
-                self.inputDeviceStates = self.inputDeviceStates
-
+                let inputDeviceStates = self.inputDeviceStates
+                self.inputDeviceStates = inputDeviceStates
             }) {
                 inputDeviceStates.insert(idState)
             }

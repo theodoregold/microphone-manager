@@ -11,6 +11,7 @@
 		63178AC0259C82D400B4C723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63178ABF259C82D400B4C723 /* AppDelegate.swift */; };
 		63178AC5259C881F00B4C723 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63178AC4259C881F00B4C723 /* Initializable.swift */; };
 		63178AC8259CBEA400B4C723 /* AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63178AC7259CBEA400B4C723 /* AppEvents.swift */; };
+		63178ACB259D3F7F00B4C723 /* DefaultInputDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63178ACA259D3F7F00B4C723 /* DefaultInputDevice.swift */; };
 		63703D072597F2D900CA7E61 /* ConnectedInputDevicesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63703D062597F2D900CA7E61 /* ConnectedInputDevicesState.swift */; };
 		63703D0C2597F3C100CA7E61 /* ConnectedInputDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63703D0B2597F3C100CA7E61 /* ConnectedInputDevices.swift */; };
 		638A1EE725991B00003ED32A /* InputDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A1EE625991B00003ED32A /* InputDeviceView.swift */; };
@@ -34,6 +35,7 @@
 		63178ABF259C82D400B4C723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63178AC4259C881F00B4C723 /* Initializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializable.swift; sourceTree = "<group>"; };
 		63178AC7259CBEA400B4C723 /* AppEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEvents.swift; sourceTree = "<group>"; };
+		63178ACA259D3F7F00B4C723 /* DefaultInputDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultInputDevice.swift; sourceTree = "<group>"; };
 		63703D062597F2D900CA7E61 /* ConnectedInputDevicesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedInputDevicesState.swift; sourceTree = "<group>"; };
 		63703D0B2597F3C100CA7E61 /* ConnectedInputDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedInputDevices.swift; sourceTree = "<group>"; };
 		638A1EE625991B00003ED32A /* InputDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDeviceView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				639DD1C02594F2520047A95C /* Muteable.swift */,
 				639DD1C82594F3160047A95C /* VolumeChangeable.swift */,
 				63703D0B2597F3C100CA7E61 /* ConnectedInputDevices.swift */,
+				63178ACA259D3F7F00B4C723 /* DefaultInputDevice.swift */,
 			);
 			path = Hardware;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				63178AC0259C82D400B4C723 /* AppDelegate.swift in Sources */,
 				63178AB7259BFEB600B4C723 /* AboutView.swift in Sources */,
 				638A1EE725991B00003ED32A /* InputDeviceView.swift in Sources */,
+				63178ACB259D3F7F00B4C723 /* DefaultInputDevice.swift in Sources */,
 				639DD1842594F0350047A95C /* Microphone_ManagerApp.swift in Sources */,
 				63703D072597F2D900CA7E61 /* ConnectedInputDevicesState.swift in Sources */,
 				639DD1D22594F43C0047A95C /* InputDeviceState.swift in Sources */,

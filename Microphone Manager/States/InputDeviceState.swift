@@ -15,9 +15,7 @@ class InputDeviceState : ObservableObject, Hashable, Identifiable {
     
     private(set) var inputDevice: InputDevice
 
-    var id : AudioDeviceID {
-        return inputDevice.audioDeviceID
-    }
+    var id = Int.random(in: 0..<99999)
     
     var onChange: ((InputDeviceState) -> ())?
     
@@ -50,6 +48,14 @@ class InputDeviceState : ObservableObject, Hashable, Identifiable {
     }
     
     @Published var isDefault: Bool {
+        willSet {
+            if newValue == true {
+                guard (try? self.inputDevice.setDefault()) != nil else {
+                    return
+                }
+            }
+        }
+        
         didSet {
             onChange?(self)
         }

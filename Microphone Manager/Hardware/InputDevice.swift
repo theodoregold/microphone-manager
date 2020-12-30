@@ -45,27 +45,6 @@ class InputDevice : Hashable, Identifiable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(audioDeviceID)
     }
-    
-    func isDefault() throws -> Bool {
-        var defaultDeviceId: AudioDeviceID = 0
-        var deviceSize = UInt32(MemoryLayout<AudioDeviceID>.size)
-        var defaultDeviceIdProperty = AudioObjectPropertyAddress(
-            mSelector: kAudioHardwarePropertyDefaultInputDevice,
-            mScope: kAudioObjectPropertyScopeGlobal,
-            mElement: kAudioObjectPropertyElementMaster)
-        
-        guard AudioObjectGetPropertyData(
-                AudioObjectID(kAudioObjectSystemObject),
-                &defaultDeviceIdProperty,
-                0,
-                nil,
-                &deviceSize,
-                &defaultDeviceId) == kAudioHardwareNoError else {
-            throw HardwareError.audio
-        }
-        
-        return defaultDeviceId == audioDeviceID
-    }
 }
 
 extension InputDevice : Muteable {
@@ -180,5 +159,47 @@ extension InputDevice : VolumeChangeable {
         }
         
         return false
+    }
+}
+
+extension InputDevice : DefaultInputDevice {
+    func isDefault() throws -> Bool {
+        var defaultDeviceId: AudioDeviceID = 0
+        var deviceSize = UInt32(MemoryLayout<AudioDeviceID>.size)
+        var defaultDeviceIdProperty = AudioObjectPropertyAddress(
+            mSelector: kAudioHardwarePropertyDefaultInputDevice,
+            mScope: kAudioObjectPropertyScopeGlobal,
+            mElement: kAudioObjectPropertyElementMaster)
+        
+        guard AudioObjectGetPropertyData(
+                AudioObjectID(kAudioObjectSystemObject),
+                &defaultDeviceIdProperty,
+                0,
+                nil,
+                &deviceSize,
+                &defaultDeviceId) == kAudioHardwareNoError else {
+            throw HardwareError.audio
+        }
+        
+        return defaultDeviceId == audioDeviceID
+    }
+    
+    func setDefault() throws {
+        var defaultDeviceId = UInt32(audioDeviceID)
+        let deviceSize = UInt32(MemoryLayout<AudioDeviceID>.size)
+        var defaultDeviceIdProperty = AudioObjectPropertyAddress(
+            mSelector: kAudioHardwarePropertyDefaultInputDevice,
+            mScope: kAudioObjectPropertyScopeGlobal,
+            mElement: kAudioObjectPropertyElementMaster)
+        
+        guard AudioObjectSetPropertyData(
+                AudioObjectID(kAudioObjectSystemObject),
+                &defaultDeviceIdProperty,
+                0,
+                nil,
+                deviceSize,
+                &defaultDeviceId) == kAudioHardwareNoError else {
+            throw HardwareError.audio
+        }
     }
 }
