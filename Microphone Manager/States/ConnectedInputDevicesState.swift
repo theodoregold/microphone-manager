@@ -62,6 +62,7 @@ class ConnectedInputDevicesState : ObservableObject {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
             self.checkForNewDevices()
             self.checkForVolumeChanges()
+            self.checkForDefaultDevice()
         }
     }
     
@@ -88,6 +89,16 @@ class ConnectedInputDevicesState : ObservableObject {
         
         if changed {
             onChange?(self)
+        }
+    }
+    
+    private func checkForDefaultDevice() {
+        for idState in inputDeviceStates {
+            if let isDefault = try? idState.inputDevice.isDefault() {
+                if idState.isDefault != isDefault {
+                    idState.isDefault = isDefault
+                }
+            }
         }
     }
 }

@@ -49,10 +49,17 @@ class InputDeviceState : ObservableObject, Hashable, Identifiable {
         }
     }
     
+    @Published var isDefault: Bool {
+        didSet {
+            onChange?(self)
+        }
+    }
+    
     init(inputDevice: InputDevice, onChange: ((InputDeviceState) -> ())? = nil) throws {
         self.inputDevice = inputDevice
         muted = try inputDevice.isMuted() && inputDevice.isSilenced()
         name = inputDevice.name
+        isDefault = try inputDevice.isDefault()
         self.onChange = onChange
     }
     

@@ -14,6 +14,9 @@ struct InputDeviceView: View {
     
     var body: some View {
         HStack {
+            Image(systemName: inputDeviceState.isDefault ? "circle.fill" : "circle")
+                .font(.largeTitle)
+                .padding(.leading).padding(.trailing)
             Text(inputDeviceState.name)
                 .padding(.leading).padding(.trailing)
             Spacer()

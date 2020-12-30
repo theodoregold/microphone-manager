@@ -41,11 +41,21 @@ struct ContentView: View {
             Divider()
             
             List {
+                HStack {
+                    Text("Default")
+                        .padding(.leading).padding(.trailing)
+                    Spacer()
+                    Text("Name")
+                        .padding(.leading).padding(.trailing)
+                    Spacer()
+                    Text("Muted")
+                        .padding(.leading).padding(.trailing)
+                }
+                Divider()
                 ForEach(Array(connectedInputDevicesState.inputDeviceStates), id: \.id) { inputDeviceState in
                     InputDeviceView(inputDeviceState: inputDeviceState)
                 }
             }
-            //.frame(width: nil, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             Divider()
             
@@ -60,7 +70,7 @@ struct ContentView: View {
             
             Divider()
         }
-        .frame(width: nil, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .frame(width: 380, height: 400, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
     
     init(connectedInputDevicesState: ConnectedInputDevicesState) {

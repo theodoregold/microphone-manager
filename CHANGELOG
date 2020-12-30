@@ -1,4 +1,6 @@
 [v1.1.0] Pending <david@dmoran.es>
+	- Show what is de default mic
+	- Notifications when micro was muted/unmuted. Included when external applications change the input volume
 	- Code cleaned
 	- Hide app icon from dock
 	- Add an about menu
