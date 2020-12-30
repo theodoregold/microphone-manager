@@ -3,9 +3,12 @@ import Foundation
 import SwiftUI
 import HotKey
 import AVFoundation
+import UserNotifications
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    @AppStorage("enableKeyBinding") var enableKeyBinding: Bool = false
+    @AppStorage(AppEvents.enableKeyBinding.rawValue) var enableKeyBinding: Bool = false
+    @AppStorage(AppEvents.enableNotifications.rawValue) var enableNotifications: Bool = false
+    
     private var windows: [String: NSWindow] = [:]
     private var hotKey: HotKey?
 
@@ -20,13 +23,43 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         register()
         
         UserDefaults.standard.addObserver(self, forKeyPath: "enableKeyBinding", options: .new, context: nil)
+        UserDefaults.standard.addObserver(self, forKeyPath: "enableNotifications", options: .new, context: nil)
         self.toggleHotKey()
 
-        self.connectedInputDevicesState!.onChange = {_ in
-            if self.connectedInputDevicesState!.isMuted() {
-                self.statusBarItem?.button?.image = NSImage(systemSymbolName: "mic.slash.fill", accessibilityDescription: nil)
-            } else {
-                self.statusBarItem?.button?.image = NSImage(systemSymbolName: "mic.fill", accessibilityDescription: nil)
+        self.connectedInputDevicesState!.onChange = self.onMuteStatusChanged
+    }
+    
+    private func onMuteStatusChanged(connectedInputDevicesState: ConnectedInputDevicesState) {
+        if self.connectedInputDevicesState!.isMuted() {
+            self.statusBarItem?.button?.image = NSImage(systemSymbolName: "mic.slash.fill", accessibilityDescription: nil)
+            if enableNotifications {
+                sendNotification(wasMuted: true)
+            }
+        } else {
+            self.statusBarItem?.button?.image = NSImage(systemSymbolName: "mic.fill", accessibilityDescription: nil)
+            if enableNotifications {
+                sendNotification(wasMuted: false)
+            }
+        }
+    }
+    
+    private func sendNotification(wasMuted: Bool) {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings { (settings) in
+            if settings.authorizationStatus == .authorized {
+                let content = UNMutableNotificationContent();
+                content.title = "Microphone was " + (wasMuted ? "muted" : "unmuted")
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+
+                // Create the request
+                let uuidString = UUID().uuidString
+                let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+
+                notificationCenter.add(request) { error in
+                    if error != nil {
+
+                    }
+                }
             }
         }
     }
@@ -37,8 +70,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
+// Permisions
 extension AppDelegate {
-    private func checkPermissions() {
+    private func checkMicrophonePermissions() {
         switch AVCaptureDevice.authorizationStatus(for: .audio) {
             case .authorized:
                 DispatchQueue.main.async {
@@ -73,6 +107,18 @@ extension AppDelegate {
                 return
         }
     }
+    
+    private func checkNotificationPermissions() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            self.enableNotifications = granted
+        }
+    }
+    
+    private func checkPermissions() {
+        checkMicrophonePermissions()
+        checkNotificationPermissions()
+    }
 }
 
 // For opening external windows
@@ -105,14 +151,30 @@ extension AppDelegate {
     }
 }
 
-// Manage HotKey
+// On AppSettings changes
 extension AppDelegate {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "enableKeyBinding" {
+        switch keyPath {
+        case AppEvents.enableKeyBinding.rawValue:
             toggleHotKey()
+        case AppEvents.enableNotifications.rawValue:
+            toggleNotifications()
+            break
+        default:
+            break
         }
     }
-    
+}
+
+// Manage Notifications
+extension AppDelegate {
+    private func toggleNotifications() {
+        // TODO
+    }
+}
+
+// Manage HotKey
+extension AppDelegate {
     private func toggleHotKey() {
         if enableKeyBinding {
             hotKey = HotKey(key: .m, modifiers: [.command, .option])

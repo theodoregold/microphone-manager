@@ -12,11 +12,7 @@ class ConnectedInputDevicesState : ObservableObject {
     
     var onChange: ((ConnectedInputDevicesState) -> ())?
 
-    @Published var inputDeviceStates : Set<InputDeviceState> {
-        didSet {
-            onChange?(self)
-        }
-    }
+    @Published var inputDeviceStates : Set<InputDeviceState>
     
     init(onChange: ((ConnectedInputDevicesState) -> ())? = nil) throws {
         self.inputDeviceStates = Set<InputDeviceState>()
@@ -39,6 +35,7 @@ class ConnectedInputDevicesState : ObservableObject {
         for idState in self.inputDeviceStates {
             idState.muted = mute
         }
+        onChange?(self)
     }
  
     private func inputDevices2State(_ inputDevices: Set<InputDevice>) -> Set<InputDeviceState> {
@@ -79,12 +76,18 @@ class ConnectedInputDevicesState : ObservableObject {
     }
     
     private func checkForVolumeChanges() {
+        var changed = false
         for idState in inputDeviceStates {
             if let isDeviceMuted = try? idState.inputDevice.isMuted() {
                 if idState.muted != isDeviceMuted {
                     idState.muted = isDeviceMuted
+                    changed = true
                 }
             }
+        }
+        
+        if changed {
+            onChange?(self)
         }
     }
 }

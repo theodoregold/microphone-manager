@@ -45,7 +45,7 @@ struct ContentView: View {
                     InputDeviceView(inputDeviceState: inputDeviceState)
                 }
             }
-            .frame(width: nil, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            //.frame(width: nil, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             Divider()
             
@@ -60,6 +60,7 @@ struct ContentView: View {
             
             Divider()
         }
+        .frame(width: nil, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
     
     init(connectedInputDevicesState: ConnectedInputDevicesState) {
