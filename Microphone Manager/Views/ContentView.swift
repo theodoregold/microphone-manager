@@ -12,9 +12,20 @@ struct ContentView: View {
     @ObservedObject var connectedInputDevicesState: ConnectedInputDevicesState
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             GlobalInputDeviceView(connectedInputDevicesState: connectedInputDevicesState)
                 .padding(.top)
+            
+            Divider()
+            
+            Text("About")
+                .buttonStyle(PlainButtonStyle())
+                .padding(.leading).padding(.trailing)
+                .frame(maxWidth: .infinity)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    NSApp.sendAction(#selector(AppDelegate.openAboutWindow), to: nil, from:nil)
+                }
             
             Divider()
             
@@ -34,6 +45,7 @@ struct ContentView: View {
                     InputDeviceView(inputDeviceState: inputDeviceState)
                 }
             }
+            .frame(width: nil, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
             Divider()
             
@@ -45,6 +57,8 @@ struct ContentView: View {
                 .onTapGesture {
                     exit(0)
                 }
+            
+            Divider()
         }
     }
     

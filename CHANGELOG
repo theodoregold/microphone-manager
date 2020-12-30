@@ -1,5 +1,7 @@
-[v1.1.0] Pending
-
+[v1.1.0] Pending <david@dmoran.es>
+	- Code cleaned
+	- Hide app icon from dock
+	- Add an about menu
 
 [v1.0.0] Released - 2020-12-29 <david@dmoran.es>
 	- Basic features added:

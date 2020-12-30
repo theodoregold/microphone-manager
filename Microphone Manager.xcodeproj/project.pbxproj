@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63178AB7259BFEB600B4C723 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63178AB6259BFEB600B4C723 /* AboutView.swift */; };
+		63178AC0259C82D400B4C723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63178ABF259C82D400B4C723 /* AppDelegate.swift */; };
+		63178AC5259C881F00B4C723 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63178AC4259C881F00B4C723 /* Initializable.swift */; };
 		63703D072597F2D900CA7E61 /* ConnectedInputDevicesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63703D062597F2D900CA7E61 /* ConnectedInputDevicesState.swift */; };
 		63703D0C2597F3C100CA7E61 /* ConnectedInputDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63703D0B2597F3C100CA7E61 /* ConnectedInputDevices.swift */; };
 		638A1EE725991B00003ED32A /* InputDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638A1EE625991B00003ED32A /* InputDeviceView.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63178AB6259BFEB600B4C723 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		63178ABF259C82D400B4C723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63178AC4259C881F00B4C723 /* Initializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializable.swift; sourceTree = "<group>"; };
 		63703D062597F2D900CA7E61 /* ConnectedInputDevicesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedInputDevicesState.swift; sourceTree = "<group>"; };
 		63703D0B2597F3C100CA7E61 /* ConnectedInputDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedInputDevices.swift; sourceTree = "<group>"; };
 		638A1EE625991B00003ED32A /* InputDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDeviceView.swift; sourceTree = "<group>"; };
@@ -58,6 +64,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63178ABE259C82BE00B4C723 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				639DD1832594F0350047A95C /* Microphone_ManagerApp.swift */,
+				63178ABF259C82D400B4C723 /* AppDelegate.swift */,
+				63178AC4259C881F00B4C723 /* Initializable.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		639DD1772594F0350047A95C = {
 			isa = PBXGroup;
 			children = (
@@ -77,10 +93,10 @@
 		639DD1822594F0350047A95C /* Microphone Manager */ = {
 			isa = PBXGroup;
 			children = (
+				63178ABE259C82BE00B4C723 /* Application */,
 				639DD1D02594F40E0047A95C /* States */,
 				639DD1B52594F0770047A95C /* Hardware */,
 				639DD1B42594F0690047A95C /* Views */,
-				639DD1832594F0350047A95C /* Microphone_ManagerApp.swift */,
 				639DD1872594F0350047A95C /* Assets.xcassets */,
 				639DD18C2594F0350047A95C /* Info.plist */,
 				639DD18D2594F0350047A95C /* Microphone_Manager.entitlements */,
@@ -104,6 +120,7 @@
 				638A1EE625991B00003ED32A /* InputDeviceView.swift */,
 				638A1EEE25994F16003ED32A /* GlobalInputDeviceView.swift */,
 				638A1F0A2599EACA003ED32A /* SettingsView.swift */,
+				63178AB6259BFEB600B4C723 /* AboutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,9 +245,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				639DD1B72594F0900047A95C /* InputDevice.swift in Sources */,
+				63178AC5259C881F00B4C723 /* Initializable.swift in Sources */,
 				639DD1862594F0350047A95C /* ContentView.swift in Sources */,
 				639DD1BC2594F0A60047A95C /* HardwareError.swift in Sources */,
 				638A1EEF25994F16003ED32A /* GlobalInputDeviceView.swift in Sources */,
+				63178AC0259C82D400B4C723 /* AppDelegate.swift in Sources */,
+				63178AB7259BFEB600B4C723 /* AboutView.swift in Sources */,
 				638A1EE725991B00003ED32A /* InputDeviceView.swift in Sources */,
 				639DD1842594F0350047A95C /* Microphone_ManagerApp.swift in Sources */,
 				63703D072597F2D900CA7E61 /* ConnectedInputDevicesState.swift in Sources */,
@@ -369,7 +389,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Microphone Manager/Preview Content\"";
 				DEVELOPMENT_TEAM = 28Q87UYUAL;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -380,6 +400,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = es.dmoran.MicrophoneManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -395,7 +416,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Microphone Manager/Preview Content\"";
 				DEVELOPMENT_TEAM = 28Q87UYUAL;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -406,6 +427,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = es.dmoran.MicrophoneManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
