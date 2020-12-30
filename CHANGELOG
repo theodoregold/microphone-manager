@@ -1,0 +1,9 @@
+[v1.1.0] Pending
+
+
+[v1.0.0] Released - 2020-12-29 <david@dmoran.es>
+	- Basic features added:
+		* List all microphones
+		* Mute or unmute microphones individually
+		* Hotkey added
+		* Launch at login
