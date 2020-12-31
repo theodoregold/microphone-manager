@@ -1,4 +1,5 @@
 [v1.1.0] Pending <david@dmoran.es>
+	- Added management for default devices
 	- Show what is de default mic
 	- Notifications when micro was muted/unmuted. Included when external applications change the input volume
 	- Code cleaned
