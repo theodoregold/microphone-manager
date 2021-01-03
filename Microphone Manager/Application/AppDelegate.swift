@@ -129,7 +129,7 @@ extension AppDelegate {
 
             let window = NSWindow(
                 contentRect: NSRect(x: 20, y: 20, width: 480, height: 300),
-                styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+                styleMask: [.titled, .closable],
                 backing: .buffered,
                 defer: false)
             window.center()
@@ -139,7 +139,8 @@ extension AppDelegate {
             
             windows[windowTitle] = window
         }
-        windows[windowTitle]?.makeKeyAndOrderFront(nil)
+        windows[windowTitle]?.makeKeyAndOrderFront(self)
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     @objc func openPreferencesWindow() {

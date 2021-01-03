@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 
 struct InputDeviceView: View {
+    @State var hovering = false
     @ObservedObject var inputDeviceState: InputDeviceState
     
     var body: some View {
@@ -32,6 +33,10 @@ struct InputDeviceView: View {
             .onTapGesture {
                 inputDeviceState.muted = !inputDeviceState.muted
             }
+        }
+        .foregroundColor(hovering ? Color.accentColor : Color.primary)
+        .onHover{ hovering in
+            self.hovering = hovering
         }
     }
 }

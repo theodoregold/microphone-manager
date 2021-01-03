@@ -9,6 +9,10 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
+    @State var hoveringAbout = false
+    @State var hoveringPreferences = false
+    @State var hoveringQuit = false
+    
     @ObservedObject var connectedInputDevicesState: ConnectedInputDevicesState
     
     var body: some View {
@@ -17,29 +21,7 @@ struct ContentView: View {
                 .padding(.top)
             
             Divider()
-            
-            Text("About")
-                .buttonStyle(PlainButtonStyle())
-                .padding(.leading).padding(.trailing)
-                .frame(maxWidth: .infinity)
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    NSApp.sendAction(#selector(AppDelegate.openAboutWindow), to: nil, from:nil)
-                }
-            
-            Divider()
-            
-            Text("Preferences...")
-                .buttonStyle(PlainButtonStyle())
-                .padding(.leading).padding(.trailing)
-                .frame(maxWidth: .infinity)
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    NSApp.sendAction(#selector(AppDelegate.openPreferencesWindow), to: nil, from:nil)
-                }
-            
-            Divider()
-            
+                   
             List {
                 HStack {
                     Text("Default")
@@ -59,14 +41,51 @@ struct ContentView: View {
             
             Divider()
             
+            Text("About")
+                .buttonStyle(PlainButtonStyle())
+                .padding(.leading).padding(.trailing)
+                .frame(maxWidth: .infinity)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    NSApp.sendAction(#selector(AppDelegate.openAboutWindow), to: nil, from:nil)
+                }
+                .foregroundColor(hoveringAbout ? Color.accentColor : Color.primary)
+                .onHover { hovering in
+                    self.hoveringAbout = hovering
+                }
+
+            
+            Divider()
+            
+            Text("Preferences...")
+                .buttonStyle(PlainButtonStyle())
+                .padding(.leading).padding(.trailing)
+                .frame(maxWidth: .infinity)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    NSApp.sendAction(#selector(AppDelegate.openPreferencesWindow), to: nil, from:nil)
+                }
+                .foregroundColor(hoveringPreferences ? Color.accentColor : Color.primary)
+                .onHover { hovering in
+                    self.hoveringPreferences = hovering
+                }
+
+            
+            Divider()
+            
             Text("Quit")
                 .buttonStyle(PlainButtonStyle())
-                .padding(.leading).padding(.trailing).padding(.bottom)
+                .padding(.leading).padding(.trailing)
                 .frame(maxWidth: .infinity)
                 .contentShape(Rectangle())
                 .onTapGesture {
                     exit(0)
                 }
+                .foregroundColor(hoveringQuit ? Color.accentColor : Color.primary)
+                .onHover { hovering in
+                    self.hoveringQuit = hovering
+                }
+
             
             Divider()
         }
